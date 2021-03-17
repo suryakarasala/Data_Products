@@ -1,0 +1,28 @@
+---
+title: "**Bern MAP**"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: html_document
+---
+### **Surya Prakash Karasala **
+## **Overview of the assignment**
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Hosting my webpage on either GitHub Pages, RPubs, or NeoCities.
+
+my webpage contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+```{r}
+library(leaflet)
+```
+
+```{r}
+my_map <- leaflet() %>%
+  addTiles() %>%  
+  addMarkers(lng=7.4474, lat=46.9480, popup="Bern, the capital city of Switzerland")
+my_map 
+```
